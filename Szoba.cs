@@ -6,7 +6,6 @@ namespace szalloda
 {
     public class Szoba
     {
-        private int terezia;
         private int ejszakaiAr;
         private int ferohely;
         private static int osszesRegisztraltSzoba = 0;
@@ -53,6 +52,14 @@ namespace szalloda
             EjszakaiAr = ejszakaiAr;
             Ferohely = ferohely;
             osszesRegisztraltSzoba++;
+        }
+        public override string ToString()
+        {
+            return $"{Szobaszam} Emelet: {Emelet}. | Férőhely {Ferohely} fő | Ár: {EjszakaiAr} Ft/éj";
+        }
+        public int FoglalasErtek(int ejszakakSzama)
+        {
+            return ejszakakSzama * EjszakaiAr;
         }
     }
 }
