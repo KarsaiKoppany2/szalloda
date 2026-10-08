@@ -6,6 +6,7 @@ namespace szalloda
 {
     public class Szoba
     {
+        private int terezia;
         private int ejszakaiAr;
         private int ferohely;
         private static int osszesRegisztraltSzoba = 0;
@@ -41,16 +42,17 @@ namespace szalloda
                 return osszesRegisztraltSzoba;
             }
         }
-        public Szoba (string szobaszam, int emelet, int ejszakaiAr) 
+        public Szoba (string szobaszam, int emelet, int ejszakaiAr) : this(szobaszam, emelet, ejszakaiAr, 2)
+        {
+
+        }
+        public Szoba (string szobaszam, int emelet, int ejszakaiAr, int ferohely)
         {
             Szobaszam = szobaszam;
             Emelet = emelet;
             EjszakaiAr = ejszakaiAr;
+            Ferohely = ferohely;
             osszesRegisztraltSzoba++;
-        }
-        public Szoba (string szobaszam, int emelet, int ejszakaiAr, int ferohely)
-        {
-
         }
     }
 }
